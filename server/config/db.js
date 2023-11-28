@@ -1,16 +1,16 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
+const connectMongos = async () => {
+  try {
+    const res = await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-const connectMongos=async()=>{
-try {
-    const res=await mongoose.connect("mongodb://127.0.0.1:27017/curdoperation");
-
-        console.log("connection  sucessfully");
-    
-} catch (error) {
-    console.log("check",error);
-}
-
+    console.log('Connection successfully');
+  } catch (error) {
+    console.log('Check:', error);
+  }
 };
-export default connectMongos;
 
+export default connectMongos;
