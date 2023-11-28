@@ -3,13 +3,15 @@ import bodyParser from 'body-parser';
 import cors from "cors";
 import connectToMongo from "./config/db.js";
 import userRoutes from "./routes/user.js";
-
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 9000;
 
 // Connect to MongoDB
 connectToMongo();
+
 
 
 // Apply middleware
